@@ -1,5 +1,1 @@
-import query from '@/helpers'
-
-export default {
-  query,
-}
+export * from './query'
