@@ -1,17 +1,4 @@
 @import "tailwindcss";
 
-.btn {
-    @apply text-center border border-gray-200 rounded-xl cursor-pointer;
-}
-
-.btn-sm {
-    @apply p-1;
-}
-
-.btn-md {
-    @apply py-3 px-2;
-}
-
-.input {
-    @apply w-full h-12 p-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-gray-300;
-}
+@import "./buttons.css";
+@import "./table.css";
