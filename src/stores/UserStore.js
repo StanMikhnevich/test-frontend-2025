@@ -91,7 +91,6 @@ export const useUserStore = defineStore('user', {
           await CredentialsService.clear()
           this.hideUserModal('create')
           await this.fetchUsers(this.filter)
-          // await this.queueWork()
         }
       } catch (e) {
         if (e.response.status === 401) {
@@ -104,7 +103,7 @@ export const useUserStore = defineStore('user', {
         }
 
         if (e.response.status === 422) {
-          this.errors = e.response.data.errors
+          this.errors = e.response.data.fails
           this.errors.message = e.response.data.message
         }
       } finally {
@@ -125,17 +124,6 @@ export const useUserStore = defineStore('user', {
         //
       } finally {
         this.loading.positions = false
-      }
-    },
-
-    async queueWork() {
-      this.loading.queue = true
-
-      try {
-        await UserService.queueWork()
-      } catch (e) {
-      } finally {
-        this.loading.queue = false
       }
     },
 
